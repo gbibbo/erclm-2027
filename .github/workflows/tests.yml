@@ -1,0 +1,48 @@
+# Runs the CPU test suites, with a tiny random Qwen2-Audio, on every push and pull request to main.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install CPU dependencies and rclone
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-ci.txt
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+
+      - name: Reject large or forbidden files
+        run: |
+          if git ls-files | grep -iE '\.(wav|flac|mp3|ogg|npz|npy|safetensors|bin|pt|pth|ckpt|pkl|tar|zip|gz)$' | grep -v '^tests/fixtures/' | grep -vE '^runs/.*\.csv\.gz$'; then
+            echo "binary artefacts are not committed (run records may ship gzipped score tables only)"; exit 1; fi
+          big=$(git ls-files -z | xargs -0 du -k | awk '$1 > 10240 {print $2}')
+          if [ -n "$big" ]; then echo "files over 10 MB: $big"; exit 1; fi
+          if git ls-files | grep -iE '(^|/)(rclone\.conf|\.env)$'; then echo "secrets must not be committed"; exit 1; fi
+
+      - name: Library tests (v2)
+        run: |
+          python tests/test_lib_v2.py
+          python tests/test_model_v2.py
+
+      - name: Infrastructure and analysis tests
+        run: python -m pytest -q tests/test_storage.py tests/test_gitlog.py tests/test_runner.py tests/test_launcher.py tests/test_bankgen.py tests/test_lora_train.py tests/test_lib_v3.py tests/test_bankgen_v3.py tests/test_omni.py tests/test_omni_control.py tests/test_study_prompts.py tests/test_genread.py tests/test_study_prompts_generation.py tests/test_omni_seam.py tests/test_repetition_penalty.py

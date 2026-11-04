@@ -1,0 +1,24 @@
+# Generation readout of the study prompts on Qwen2-Audio, with the prompt that OPRO-LLM chose for the base model. Exploratory.
+# The authors added it on 2 November. It generates the answer and interprets it as the study under review did (genread.py).
+# Rule written before the run in docs/exploratory_log.md, "Generation readout of the study prompts
+# (2 November)". The same 300 clips of the prompt control, both backbones.
+run_name: gen-opro_llm_base
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+prompt_key: opro_llm_base
+llm_layers: [8, 16, 24]
+backbones: [base, lora]
+adapter: models/lora_retrained_v1   # retrained LoRA (configs/retrain.yaml)
+stages: [data_test, check_base, extract_base_eval, check_lora, extract_lora_eval]
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train: null
+selection: {pilot: true, n_per_class: 150, seed: 42, axes: [duration, snr]}
+extraction: {shard_size: 250, n_content_free: 8}
+generate: {max_new_tokens: 16}

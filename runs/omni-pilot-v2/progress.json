@@ -1,0 +1,26 @@
+{
+  "run_id": "omni-pilot-v2",
+  "session_id": "20261029-214130-kaggle-7775",
+  "host": "kaggle",
+  "code_sha": "ff0e1a65c3a0b96a1910c0d1ea33fc9bf53b08ca",
+  "updated_at": "2026-10-29T22:57:02Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-29T21:42:48Z",
+      "elapsed_s": 69.1
+    },
+    "extract_omni": {
+      "status": "done",
+      "started_at": "2026-10-29T21:44:18Z",
+      "total": 900,
+      "done": 900,
+      "done_at_start": 0,
+      "s_per_item": 4.7908,
+      "eta_min": 0.0,
+      "elapsed_s": 4354.0
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,26 @@
+{
+  "run_id": "omni-seam-v1",
+  "session_id": "20261102-184616-kaggle-d473",
+  "host": "kaggle",
+  "code_sha": "2ae3d37b44ceeeeb5ae0e8374b76d0acae8cea11",
+  "updated_at": "2026-11-03T00:29:04Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-11-02T18:47:14Z",
+      "elapsed_s": 67.0
+    },
+    "extract_omni": {
+      "status": "done",
+      "started_at": "2026-11-02T18:48:40Z",
+      "total": 5100,
+      "done": 5100,
+      "done_at_start": 0,
+      "s_per_item": 3.9927,
+      "eta_min": 0.0,
+      "elapsed_s": 20416.1
+    }
+  },
+  "warnings": []
+}

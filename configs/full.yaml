@@ -1,0 +1,25 @@
+# Confirmatory run. Full bank, both backbones, the LoRA training bank
+# for the confirmatory heads, and content-free containers. Bootstrap with 10,000 replicates.
+run_name: full-v1
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+prompt_key: ab
+llm_layers: [8, 16, 24]
+backbones: [base, lora]
+adapter: models/lora_retrained_v1   # retrained LoRA (configs/retrain.yaml)
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train:
+    tar: data/train_bank_v2.tar
+    manifest: train_bank_v2/manifest.csv
+    audio: train_bank_v2/audio
+    expect: {rows: 3072, base_ids: 64, rec_ids: 64, speech_share: 0.5}
+selection: {pilot: false, seed: 42}
+extraction: {shard_size: 250, n_content_free: 8}
+analysis: {bootstrap_B: 10000, seed: 42, h3_margin: 0.02, prevalence_reps: 50}

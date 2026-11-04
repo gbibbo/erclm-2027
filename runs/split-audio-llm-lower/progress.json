@@ -1,0 +1,33 @@
+{
+  "run_id": "split-audio-llm-lower",
+  "session_id": "20261023-035604-colab-725f",
+  "host": "colab",
+  "code_sha": "40a51adf42214fbb1dfe52c415206fb97051de03",
+  "updated_at": "2026-10-23T04:45:32Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-23T03:56:42Z",
+      "elapsed_s": 65.4
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-23T03:58:04Z",
+      "elapsed_s": 530.8
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-23T04:07:12Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.5385,
+      "eta_min": 0.0,
+      "elapsed_s": 2292.2
+    }
+  },
+  "warnings": [
+    "check_base is not done, so base and LoRA outputs were not compared"
+  ]
+}

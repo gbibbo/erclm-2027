@@ -1,0 +1,46 @@
+{
+  "run_id": "prompt-opro_tmpl",
+  "session_id": "20261030-091201-colab-10a4",
+  "host": "colab",
+  "code_sha": "d8a02c3accfb9e4135395b78b0f38c6b7c673795",
+  "updated_at": "2026-10-30T10:46:40Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-30T09:12:46Z",
+      "elapsed_s": 69.2
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-30T09:14:19Z",
+      "elapsed_s": 453.4
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-30T09:22:16Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.5542,
+      "eta_min": 0.0,
+      "elapsed_s": 2369.8
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-30T10:02:09Z",
+      "elapsed_s": 19.2
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-30T10:02:51Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.6126,
+      "eta_min": 0.0,
+      "elapsed_s": 2617.9
+    }
+  },
+  "warnings": []
+}

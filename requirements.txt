@@ -1,0 +1,10 @@
+# GPU, for Colab and Kaggle. torch, numpy, pandas and scipy come with the image of each service.
+transformers==5.19.0
+peft==0.21.2
+accelerate>=1.10
+bitsandbytes>=0.45
+soundfile
+librosa
+scikit-learn
+pyyaml
+pyroomacoustics==0.10.1

@@ -1,0 +1,21 @@
+{
+  "rows": 1824,
+  "conditions": 8,
+  "base_ids": 228,
+  "rec_ids": 114,
+  "speech_share": 0.5,
+  "axes": {
+    "duration": 1824
+  },
+  "unknown_axis": 0,
+  "ids_hash": "a784fd3d0e0de05077f61c2671acfabe26ec9b1007907621026c43d1425530e4",
+  "audio_checked": 1824,
+  "audio_bad": [],
+  "failures": [],
+  "ok": true,
+  "sha256": "6045dc871150ed9263b21edb0dca031ac60fe2a4443ac8f52e23b8d6fb172948",
+  "neutral_identical": {
+    "base_ids_with_identical_neutral_conditions": 228,
+    "of": 228
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "run_id": "prompt-ba_speech_first",
+  "session_id": "20261021-220214-kaggle-2592",
+  "host": "kaggle",
+  "code_sha": "0e8e0582d2f2d7ce8d525bd1d1bdd701d2feb7e7",
+  "updated_at": "2026-10-21T23:48:11Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-21T22:03:25Z",
+      "elapsed_s": 75.1
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-21T22:05:25Z",
+      "elapsed_s": 139.1
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-21T22:08:32Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.6532,
+      "eta_min": 0.0,
+      "elapsed_s": 2821.3
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-21T22:56:22Z",
+      "elapsed_s": 32.8
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-21T22:57:40Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.6982,
+      "eta_min": 0.0,
+      "elapsed_s": 3010.4
+    }
+  },
+  "warnings": []
+}

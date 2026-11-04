@@ -1,0 +1,32 @@
+# Binary artefacts (audio, features, checkpoints, adapters) are not committed.
+*.wav
+*.flac
+*.npz
+*.safetensors
+*.bin
+*.pt
+*.tar
+*.tar.gz
+*.zip
+data/
+work/
+checkpoints/
+hf_cache/
+
+# Secrets
+.env
+*.secret
+rclone.conf
+
+# Local environment and the working folder of the runner and the tools
+.venv/
+_work/
+
+# Python and notebooks
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Figures written by tools/make_figures.py: the PDFs are kept, the preview PNGs are not
+figures/*.png

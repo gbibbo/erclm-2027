@@ -1,0 +1,4 @@
+readout,C,cv_auroc
+L2,0.0001,0.9797871907552084
+P_enc_region_mean,0.001,0.959228515625
+P_enc_global_mean,0.001,0.9628448486328125

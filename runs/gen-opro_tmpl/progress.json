@@ -1,0 +1,46 @@
+{
+  "run_id": "gen-opro_tmpl",
+  "session_id": "20261102-163342-kaggle-17bc",
+  "host": "kaggle",
+  "code_sha": "650a18c53e000420fd7dcb69f4c4ca7c5fc9295d",
+  "updated_at": "2026-11-02T18:42:20Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-11-02T16:34:56Z",
+      "elapsed_s": 71.7
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-11-02T16:36:29Z",
+      "elapsed_s": 141.3
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-11-02T16:39:13Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.7911,
+      "eta_min": 0.0,
+      "elapsed_s": 3363.5
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-11-02T17:35:39Z",
+      "elapsed_s": 20.2
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-11-02T17:36:20Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.9301,
+      "eta_min": 0.0,
+      "elapsed_s": 3948.7
+    }
+  },
+  "warnings": []
+}

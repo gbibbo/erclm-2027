@@ -1,0 +1,15 @@
+{
+  "run_id": "diag-banks",
+  "session_id": "20261020-192020-colab-4909",
+  "host": "colab",
+  "code_sha": "9d90b3684a999efaa05891c85dd74fac20b5523c",
+  "updated_at": "2026-10-20T19:21:03Z",
+  "current_stage": "build_banks",
+  "stages": {
+    "build_banks": {
+      "status": "running",
+      "started_at": "2026-10-20T19:21:03Z"
+    }
+  },
+  "warnings": []
+}

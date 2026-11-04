@@ -1,0 +1,46 @@
+{
+  "run_id": "prompt-ab_speech_second",
+  "session_id": "20261021-204832-colab-3272",
+  "host": "colab",
+  "code_sha": "61c0bffae64e284fd34a329c04d69e6d4e3cc107",
+  "updated_at": "2026-10-21T22:18:47Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-21T20:49:14Z",
+      "elapsed_s": 84.9
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-21T20:51:00Z",
+      "elapsed_s": 300.5
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-21T20:56:22Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.5444,
+      "eta_min": 0.0,
+      "elapsed_s": 2322.0
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-21T21:35:26Z",
+      "elapsed_s": 20.0
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-21T21:36:06Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.5983,
+      "eta_min": 0.0,
+      "elapsed_s": 2550.8
+    }
+  },
+  "warnings": []
+}

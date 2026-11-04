@@ -1,0 +1,82 @@
+{
+  "backbone": "base",
+  "probe_seconds": 2.0,
+  "n_audio_tokens": 50,
+  "n_audio_in_ids": 50,
+  "head_check_maxdiff": 0.0,
+  "head_tol": 0.01,
+  "zA": 14.2265625,
+  "zB": 18.015625,
+  "s_primary": -3.7890625,
+  "s_lse": -3.789067268371582,
+  "deterministic": true,
+  "max_abs_dh_repeat": 0.0,
+  "top1": "B",
+  "top1_is_label": true,
+  "labels": {
+    "labels": [
+      "A",
+      "B"
+    ],
+    "pos_ids": [
+      32,
+      362
+    ],
+    "neg_ids": [
+      33,
+      425
+    ],
+    "pos_primary": 32,
+    "neg_primary": 33,
+    "single_token": [
+      true,
+      true
+    ],
+    "decoded": [
+      "A",
+      " A",
+      "B",
+      " B"
+    ]
+  },
+  "feature_dims": {
+    "h_final": 4096,
+    "enc_global_mean": 1280,
+    "enc_region_mean": 1280,
+    "enc_region_max": 1280,
+    "proj_region_mean": 4096,
+    "h_layer8": 4096,
+    "h_layer16": 4096,
+    "h_layer24": 4096
+  },
+  "recorder": {
+    "final_norm": "model.language_model.norm",
+    "audio_tower": "model.audio_tower",
+    "projector": "model.multi_modal_projector",
+    "lm_head": "lm_head",
+    "layer8": "model.language_model.layers.8",
+    "layer16": "model.language_model.layers.16",
+    "layer24": "model.language_model.layers.24"
+  },
+  "n_llm_layers": 32,
+  "model_info": {
+    "load_s": 680.3,
+    "vram_after_load": {
+      "allocated_gb": 5.823,
+      "max_allocated_gb": 5.878,
+      "reserved_gb": 5.994
+    }
+  },
+  "vram": {
+    "allocated_gb": 5.845,
+    "max_allocated_gb": 5.944,
+    "reserved_gb": 6.143
+  },
+  "gpu": [
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    }
+  ],
+  "failures": []
+}

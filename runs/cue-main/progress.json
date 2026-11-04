@@ -1,0 +1,46 @@
+{
+  "run_id": "cue-main",
+  "session_id": "20261022-145552-kaggle-a9f0",
+  "host": "kaggle",
+  "code_sha": "26b00902443f60714b8fece94ab7727293ee3acd",
+  "updated_at": "2026-10-22T17:36:46Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-22T14:56:47Z",
+      "elapsed_s": 70.6
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-22T14:58:25Z",
+      "elapsed_s": 132.1
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-22T15:01:05Z",
+      "total": 7769,
+      "done": 7769,
+      "done_at_start": 0,
+      "s_per_item": 0.5673,
+      "eta_min": 0.0,
+      "elapsed_s": 4563.2
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-22T16:17:35Z",
+      "elapsed_s": 21.4
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-22T16:18:24Z",
+      "total": 7769,
+      "done": 7769,
+      "done_at_start": 0,
+      "s_per_item": 0.598,
+      "eta_min": 0.0,
+      "elapsed_s": 4688.4
+    }
+  },
+  "warnings": []
+}

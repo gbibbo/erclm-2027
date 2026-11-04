@@ -1,0 +1,33 @@
+{
+  "run_id": "split-llm-upper",
+  "session_id": "20261022-174336-kaggle-9a37",
+  "host": "kaggle",
+  "code_sha": "9591c47150e37b97b9b0ebd6226c2da915d1dc54",
+  "updated_at": "2026-10-22T18:31:50Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-22T17:44:49Z",
+      "elapsed_s": 68.3
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-22T17:46:22Z",
+      "elapsed_s": 148.7
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-22T17:49:15Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.5939,
+      "eta_min": 0.0,
+      "elapsed_s": 2538.6
+    }
+  },
+  "warnings": [
+    "check_base is not done, so base and LoRA outputs were not compared"
+  ]
+}

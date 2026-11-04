@@ -1,0 +1,24 @@
+# Rule for V of 26 October (docs/exploratory_log.md, "Rule for V, the fixed recipe on the clean provenance bank,
+# written on 26 October before extraction"), requested by the calibrated review of draft v6. Prompt "A) non-speech, B) speech"
+# (ba_speech_second) on the provenance bank v3, base model only. With the original format of prov-v3 it gives s̄,
+# the fixed recipe of G1, where speech and non-speech share a recording. The analysis uses the 76 recordings
+# of prov-v3-clean. Exploratory.
+run_name: prompt-ba_speech_second-prov
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+prompt_key: ba_speech_second
+llm_layers: [8, 16, 24]
+backbones: [base]
+adapter: models/lora_retrained_v1   # retrained LoRA (configs/retrain.yaml)
+stages: [data_test, check_base, extract_base_eval]
+data:
+  test:
+    tar: data/prov_bank_v3.tar
+    manifest: prov_bank_v3/manifest.csv
+    audio: prov_bank_v3/audio
+    expect: {conditions: 8, speech_share: 0.5}
+  train: null
+selection: {pilot: false, seed: 42}
+extraction: {shard_size: 250, n_content_free: 8}

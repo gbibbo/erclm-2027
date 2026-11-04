@@ -1,0 +1,41 @@
+{
+  "run_id": "pilot-v1-lora",
+  "session_id": "20261020-021822-colab-c7c7",
+  "host": "colab",
+  "code_sha": "011beff4c80a49f57e8c3973e4c0873cfa0e3903",
+  "updated_at": "2026-10-20T03:06:29Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-10-19T19:27:25Z"
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-20T02:19:19Z",
+      "elapsed_s": 260.6
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-20T02:24:03Z",
+      "total": 2209,
+      "done": 2209,
+      "done_at_start": 0,
+      "s_per_item": 0.8229,
+      "eta_min": 0.0,
+      "elapsed_s": 1934.0
+    },
+    "analyze_lora": {
+      "status": "done",
+      "started_at": "2026-10-20T02:56:42Z",
+      "elapsed_s": 307.6
+    },
+    "joint": {
+      "status": "done",
+      "started_at": "2026-10-20T03:03:03Z",
+      "elapsed_s": 195.0
+    }
+  },
+  "warnings": []
+}

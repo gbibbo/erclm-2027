@@ -1,0 +1,26 @@
+{
+  "run_id": "omni-control-v1",
+  "session_id": "20261030-185518-kaggle-270c",
+  "host": "kaggle",
+  "code_sha": "715ba47c87fdfd60502eb66cb7ebce584ea056c3",
+  "updated_at": "2026-10-31T00:21:20Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-10-30T06:54:11Z"
+    },
+    "extract_omni": {
+      "status": "done",
+      "started_at": "2026-10-30T18:56:20Z",
+      "total": 15000,
+      "done": 15000,
+      "done_at_start": 10500,
+      "s_per_item": 4.2784,
+      "eta_min": 0.0,
+      "elapsed_s": 19492.0
+    }
+  },
+  "warnings": []
+}

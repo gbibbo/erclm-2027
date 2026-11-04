@@ -1,0 +1,41 @@
+# Pilot of Qwen3-Omni as a second model, frozen readouts only. Exploratory. The authors chose
+# this option on 29 October. Rule written before the run in docs/exploratory_log.md,
+# "Qwen3-Omni pilot (29 October)". The same 100 clips as the Qwen2-Audio pilot (pilot-v1), at 20, 40 and 1000 ms,
+# with the confirmatory A/B format, the format with the letters crossed (for s_sim) and the prompt of the
+# study under review. It runs on Kaggle, because the model in NF4 takes about 18 GB and needs 2 x T4.
+run_name: omni-pilot-v2   # v1 ran out of memory while quantising, from fragmentation (env)
+model:
+  id: Qwen/Qwen3-Omni-30B-A3B-Instruct
+  revision: 26291f793822fb6be9555850f06dfe95f2d7e695   # Hugging Face commit of 22 September 2025
+  quant: nf4
+# transformers 5 fuses the experts and bitsandbytes does not quantise them (src/erclm/omni.py)
+pip: ["transformers==4.57.6", "huggingface_hub>=0.34,<1.0", "tokenizers>=0.22,<=0.23.0"]
+env: {PYTORCH_CUDA_ALLOC_CONF: "expandable_segments:True"}
+backbones: []
+stages: [data_test, extract_omni]
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train: null
+selection: {pilot: true, n_per_class: 50, seed: 42}
+extraction: {shard_size: 100, log_every: 50}
+analysis: {bootstrap_B: 2000, seed: 42}
+omni:
+  prompts: [ab, ba_speech_second, hand_csl]
+  conditions: [dur_20ms, dur_40ms, dur_1000ms]
+  compute_dtype: float16
+  max_memory_per_gpu: 13GiB
+  rule:
+    validity_prompt: hand_csl
+    validity_condition: dur_1000ms
+    validity_min_ba: 0.85
+    full_items: 27160          # 970 clips x 14 duration and SNR conditions x 2 formats (s_sim)
+    max_hours: 25
+    read_prompts: [ab, s_sim]
+    read_conditions: [dur_20ms, dur_40ms]
+    representation_auroc_hi: 0.65
+    criterion_auroc_lo: 0.60
+    criterion_gap: 0.10

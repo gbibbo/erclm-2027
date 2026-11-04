@@ -1,0 +1,33 @@
+{
+  "run_id": "split-llm",
+  "session_id": "20261022-160348-colab-5014",
+  "host": "colab",
+  "code_sha": "9591c47150e37b97b9b0ebd6226c2da915d1dc54",
+  "updated_at": "2026-10-22T16:56:58Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-22T16:04:37Z",
+      "elapsed_s": 79.2
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-22T16:06:20Z",
+      "elapsed_s": 239.6
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-22T16:10:43Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.648,
+      "eta_min": 0.0,
+      "elapsed_s": 2762.3
+    }
+  },
+  "warnings": [
+    "check_base is not done, so base and LoRA outputs were not compared"
+  ]
+}

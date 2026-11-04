@@ -1,0 +1,46 @@
+{
+  "run_id": "gen-hand_csl",
+  "session_id": "20261103-003308-kaggle-528b",
+  "host": "kaggle",
+  "code_sha": "6d4b09b9ca63672aed0c9ee91502965c7cd58096",
+  "updated_at": "2026-11-03T02:39:48Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-11-03T00:34:24Z",
+      "elapsed_s": 67.6
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-11-03T00:35:54Z",
+      "elapsed_s": 140.6
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-11-03T00:38:35Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.7848,
+      "eta_min": 0.0,
+      "elapsed_s": 3335.1
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-11-03T01:34:31Z",
+      "elapsed_s": 17.4
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-11-03T01:35:08Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.9119,
+      "eta_min": 0.0,
+      "elapsed_s": 3870.3
+    }
+  },
+  "warnings": []
+}

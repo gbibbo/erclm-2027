@@ -1,0 +1,49 @@
+# Sweep of the crop position in Qwen3-Omni, after R3 of omni-control-v1. Exploratory.
+# The authors added it on 2 November to run the tests still missing. Rule written before the run in
+# docs/exploratory_log.md, "Sweep of the crop position in Qwen3-Omni (2 November)". The same 300 control clips
+# at 20, 40 and 60 ms, with the audio rotated to put the crop elsewhere in the two
+# 1 s blocks of the encoder. Positions 0 and +500 ms are already in omni-control-v1, with the same code.
+# 5,100 passes, about 6 h on Kaggle with 2 x T4.
+run_name: omni-seam-v1
+model:
+  id: Qwen/Qwen3-Omni-30B-A3B-Instruct
+  revision: 26291f793822fb6be9555850f06dfe95f2d7e695   # Hugging Face commit of 22 September 2025
+  quant: nf4
+# transformers 5 fuses the experts and bitsandbytes does not quantise them (src/erclm/omni.py)
+pip: ["transformers==4.57.6", "huggingface_hub>=0.34,<1.0", "tokenizers>=0.22,<=0.23.0"]
+env: {PYTORCH_CUDA_ALLOC_CONF: "expandable_segments:True"}
+backbones: []
+stages: [data_test, extract_omni]
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train: null
+selection: {pilot: true, n_per_class: 150, seed: 42, axes: [duration, snr]}
+extraction: {shard_size: 100, log_every: 100}
+analysis: {bootstrap_B: 2000, seed: 42}
+omni:
+  # centre of the crop in ms inside the 2 s container, with blocks from 0 to 1000 and from 1000 to 2000
+  tracks:
+    - {name: ab_shift-500, prompt: ab, shift_ms: -500}    # 500, centre of the first block
+    - {name: ab_shift-250, prompt: ab, shift_ms: -250}    # 750, in the first block
+    - {name: ab_shift40, prompt: ab, shift_ms: 40}        # 1040, wholly inside the first token of the second block
+    - {name: ab_shift250, prompt: ab, shift_ms: 250}      # 250, in the second block
+    - {name: ab_shift750, prompt: ab, shift_ms: 750}      # 750, in the second block
+    - {name: hand_csl_shift500, prompt: hand_csl, shift_ms: 500, conditions: [dur_20ms, dur_40ms]}
+  conditions: [dur_20ms, dur_40ms, dur_60ms]
+  compute_dtype: float16
+  max_memory_per_gpu: 13GiB
+  rule:   # the rule of the pilot, only so that the stage reports its table. This sweep is read by R5.
+    validity_prompt: hand_csl
+    validity_condition: dur_1000ms
+    validity_min_ba: 0.85
+    full_items: 27160
+    max_hours: 25
+    read_prompts: [ab_shift-500, ab_shift40]
+    read_conditions: [dur_20ms, dur_40ms]
+    representation_auroc_hi: 0.65
+    criterion_auroc_lo: 0.60
+    criterion_gap: 0.10

@@ -1,0 +1,53 @@
+# Qwen3-Omni on the 300 clips of the prompt control (150 per class, duration and SNR axes), in the 14
+# conditions. Exploratory. The authors chose this option on 30 October, after the pilot. Rule
+# written before the run in docs/exploratory_log.md, "Qwen3-Omni on the 300 control clips (30 October)".
+# Four tracks in this order. The confirmatory A/B format, the format with the letters crossed (s_sim),
+# the A/B format with the audio shifted by 500 ms at the 8 durations, which moves the crop out of the seam between the two
+# 1 s blocks of the encoder (src/erclm/omni.py, token_spans), and the prompt of the study under review.
+# Each pass stores the states for the probes. 15,000 passes, about 17 h on Kaggle with 2 x T4.
+run_name: omni-control-v1
+model:
+  id: Qwen/Qwen3-Omni-30B-A3B-Instruct
+  revision: 26291f793822fb6be9555850f06dfe95f2d7e695   # Hugging Face commit of 22 September 2025
+  quant: nf4
+# transformers 5 fuses the experts and bitsandbytes does not quantise them (src/erclm/omni.py)
+pip: ["transformers==4.57.6", "huggingface_hub>=0.34,<1.0", "tokenizers>=0.22,<=0.23.0"]
+env: {PYTORCH_CUDA_ALLOC_CONF: "expandable_segments:True"}
+backbones: []
+stages: [data_test, extract_omni]
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train: null
+# the same selection as configs/prompt_*.yaml, so these are the 4,200 items of the prompt control
+selection: {pilot: true, n_per_class: 150, seed: 42, axes: [duration, snr]}
+extraction: {shard_size: 100, log_every: 100}
+analysis: {bootstrap_B: 2000, seed: 42}
+omni:
+  tracks:
+    - ab
+    - ba_speech_second
+    - name: ab_shift500
+      prompt: ab
+      shift_ms: 500
+      conditions: [dur_20ms, dur_40ms, dur_60ms, dur_80ms, dur_100ms, dur_200ms, dur_500ms, dur_1000ms]
+    - hand_csl
+  conditions: [dur_20ms, dur_40ms, dur_60ms, dur_80ms, dur_100ms, dur_200ms, dur_500ms, dur_1000ms,
+               snr_-10dB, snr_-5dB, snr_0dB, snr_5dB, snr_10dB, snr_20dB]
+  compute_dtype: float16
+  max_memory_per_gpu: 13GiB
+  # the rule of the pilot, unchanged (R1). Validity and feasibility are reported all the same.
+  rule:
+    validity_prompt: hand_csl
+    validity_condition: dur_1000ms
+    validity_min_ba: 0.85
+    full_items: 27160          # 970 clips x 14 duration and SNR conditions x 2 formats (s_sim)
+    max_hours: 25
+    read_prompts: [ab, s_sim]
+    read_conditions: [dur_20ms, dur_40ms]
+    representation_auroc_hi: 0.65
+    criterion_auroc_lo: 0.60
+    criterion_gap: 0.10

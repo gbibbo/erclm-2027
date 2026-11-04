@@ -1,0 +1,17 @@
+{
+  "rows": 3072,
+  "conditions": 48,
+  "base_ids": 64,
+  "rec_ids": 64,
+  "speech_share": 0.5,
+  "axes": {
+    "factorial": 3072
+  },
+  "unknown_axis": 0,
+  "ids_hash": "8eccbbd9a55d9a4f0bca36e10d17c54fe84d475bafeedd7bfa73bc34401a80e4",
+  "audio_checked": 3072,
+  "audio_bad": [],
+  "failures": [],
+  "ok": true,
+  "sha256": "f4574ce133892460bc7183a21226d2d85fa8bed9e752903b536004cc69e891b7"
+}

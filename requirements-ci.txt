@@ -1,0 +1,15 @@
+# CPU, for CI and local runs. torch is installed separately from the CPU index.
+transformers==5.19.0
+peft==0.21.2
+accelerate>=1.10
+safetensors
+tokenizers
+numpy
+pandas
+scipy
+scikit-learn
+soundfile
+pyyaml
+pytest
+nbformat
+pyroomacoustics==0.10.1

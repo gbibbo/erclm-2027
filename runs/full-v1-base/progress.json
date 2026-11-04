@@ -1,0 +1,51 @@
+{
+  "run_id": "full-v1-base",
+  "session_id": "20261020-143225-colab-86ce",
+  "host": "colab",
+  "code_sha": "011beff4c80a49f57e8c3973e4c0873cfa0e3903",
+  "updated_at": "2026-10-20T18:51:53Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-20T14:33:17Z",
+      "elapsed_s": 83.0
+    },
+    "data_train": {
+      "status": "done",
+      "started_at": "2026-10-20T14:35:17Z",
+      "elapsed_s": 22.2
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-20T14:36:08Z",
+      "elapsed_s": 366.1
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-20T14:42:43Z",
+      "total": 21349,
+      "done": 21349,
+      "done_at_start": 0,
+      "s_per_item": 0.5549,
+      "eta_min": 0.0,
+      "elapsed_s": 11891.3
+    },
+    "extract_base_train": {
+      "status": "done",
+      "started_at": "2026-10-20T18:01:21Z",
+      "total": 3072,
+      "done": 3072,
+      "done_at_start": 0,
+      "s_per_item": 0.5495,
+      "eta_min": 0.0,
+      "elapsed_s": 1731.6
+    },
+    "analyze_base": {
+      "status": "done",
+      "started_at": "2026-10-20T18:30:43Z",
+      "elapsed_s": 1257.0
+    }
+  },
+  "warnings": []
+}

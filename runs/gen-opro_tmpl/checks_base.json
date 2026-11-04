@@ -1,0 +1,94 @@
+{
+  "backbone": "base",
+  "probe_seconds": 2.0,
+  "n_audio_tokens": 50,
+  "n_audio_in_ids": 50,
+  "head_check_maxdiff": 0.0,
+  "head_tol": 0.01,
+  "zA": 19.28125,
+  "zB": 19.875,
+  "s_primary": -0.59375,
+  "s_lse": -0.5937328338623047,
+  "deterministic": true,
+  "max_abs_dh_repeat": 0.0,
+  "top1": "N",
+  "top1_is_label": true,
+  "labels": {
+    "labels": [
+      "SPEECH",
+      "NONSPEECH"
+    ],
+    "pos_ids": [
+      50,
+      67735
+    ],
+    "neg_ids": [
+      45,
+      20575
+    ],
+    "pos_primary": 50,
+    "neg_primary": 45,
+    "single_token": [
+      false,
+      false
+    ],
+    "decoded": [
+      "S",
+      " SPE",
+      "N",
+      " NON"
+    ]
+  },
+  "feature_dims": {
+    "h_final": 4096,
+    "enc_global_mean": 1280,
+    "enc_region_mean": 1280,
+    "enc_region_max": 1280,
+    "proj_region_mean": 4096,
+    "h_layer8": 4096,
+    "h_layer16": 4096,
+    "h_layer24": 4096
+  },
+  "recorder": {
+    "final_norm": "model.language_model.norm",
+    "audio_tower": "model.audio_tower",
+    "projector": "model.multi_modal_projector",
+    "lm_head": "lm_head",
+    "layer8": "model.language_model.layers.8",
+    "layer16": "model.language_model.layers.16",
+    "layer24": "model.language_model.layers.24"
+  },
+  "n_llm_layers": 32,
+  "model_info": {
+    "load_s": 134.8,
+    "vram_after_load": {
+      "allocated_gb": 5.824,
+      "max_allocated_gb": 5.936,
+      "reserved_gb": 6.08,
+      "per_device_allocated_gb": [
+        2.681,
+        3.142
+      ]
+    }
+  },
+  "vram": {
+    "allocated_gb": 5.855,
+    "max_allocated_gb": 6.049,
+    "reserved_gb": 6.303,
+    "per_device_allocated_gb": [
+      2.701,
+      3.154
+    ]
+  },
+  "gpu": [
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    },
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    }
+  ],
+  "failures": []
+}

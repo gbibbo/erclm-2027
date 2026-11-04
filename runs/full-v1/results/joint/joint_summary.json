@@ -1,0 +1,11 @@
+{
+  "n_items": 21340,
+  "n_recordings": 695,
+  "confirmatory": true,
+  "h3_noninferior_all_axes": false,
+  "h3_margin": 0.02,
+  "bootstrap_B": 10000,
+  "seed": 42,
+  "run_name": "full-v1",
+  "code_sha": "5ddc774248370c6932f4f6e6e6ae661db1858b77"
+}

@@ -1,0 +1,117 @@
+{
+  "format": "erclm-scores-v1",
+  "info": {
+    "backbone": "lora",
+    "bootstrap_B": 2000,
+    "code_sha": "011beff4c80a49f57e8c3973e4c0873cfa0e3903",
+    "confirmatory": false,
+    "fit_info": {
+      "L2_cv": [
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9802840909090909
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9764462809917356
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9824121900826446
+        },
+        {
+          "C": 0.01,
+          "cv_auroc": 0.9967303719008265
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9818595041322313
+        }
+      ],
+      "P_enc_global_mean_cv": [
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9855578512396694
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9835227272727273
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9851084710743802
+        },
+        {
+          "C": 0.01,
+          "cv_auroc": 0.9971022727272727
+        },
+        {
+          "C": 0.01,
+          "cv_auroc": 0.985599173553719
+        }
+      ],
+      "P_enc_region_mean_cv": [
+        {
+          "C": 0.01,
+          "cv_auroc": 0.9803305785123966
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9791012396694214
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.9822365702479339
+        },
+        {
+          "C": 0.01,
+          "cv_auroc": 0.9974690082644628
+        },
+        {
+          "C": 0.001,
+          "cv_auroc": 0.983775826446281
+        }
+      ]
+    },
+    "head": "L2_cv",
+    "n_base_ids": 100,
+    "n_content_free": 9,
+    "n_items": 2200,
+    "n_recordings": 100,
+    "probe": "P_enc_region_mean_cv",
+    "run_name": "pilot-v1",
+    "s_cf_mean": -5.663194444444445,
+    "seed": 42,
+    "top1_is_label_share": 1.0
+  },
+  "n_items": 2200,
+  "readouts": {
+    "L0": {
+      "rule": null
+    },
+    "L1_bc_cond": {
+      "rule": "bc_cond"
+    },
+    "L1_bc_global": {
+      "rule": "bc_global"
+    },
+    "L1_center_cond": {
+      "rule": "center_cond"
+    },
+    "L1_cf": {
+      "rule": null
+    },
+    "L1_median_cond": {
+      "rule": "median_cond"
+    },
+    "L2_cv": {
+      "rule": null
+    },
+    "P_enc_global_mean_cv": {
+      "rule": null
+    },
+    "P_enc_region_mean_cv": {
+      "rule": null
+    }
+  }
+}

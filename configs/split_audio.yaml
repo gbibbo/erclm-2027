@@ -1,0 +1,23 @@
+# GPU plan of 22 October, experiment I2 (docs/exploratory_log.md, "GPU plan of 22 October"). The retrained LoRA
+# stays active only in the audio encoder (96 modules), with the rest of its modules switched off (lib_v3.restrict_lora). The same 150 base clips
+# per class and the same duration and SNR axes as the prompt control. Exploratory.
+run_name: split-audio
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+prompt_key: ab
+llm_layers: [8, 16, 24]
+adapter: models/lora_retrained_v1   # retrained LoRA (configs/retrain.yaml)
+backbones: [lora]
+stages: [data_test, check_lora, extract_lora_eval]
+lora_keep: audio_tower
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train: null
+selection: {pilot: true, n_per_class: 150, seed: 42, axes: [duration, snr]}
+extraction: {shard_size: 250, n_content_free: 8}

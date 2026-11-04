@@ -1,0 +1,46 @@
+{
+  "run_id": "prompt-hand_csl",
+  "session_id": "20261030-104835-colab-a9e9",
+  "host": "colab",
+  "code_sha": "d8a02c3accfb9e4135395b78b0f38c6b7c673795",
+  "updated_at": "2026-10-30T12:18:35Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-30T10:49:19Z",
+      "elapsed_s": 70.9
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-30T10:50:52Z",
+      "elapsed_s": 274.0
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-30T10:55:49Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.5422,
+      "eta_min": 0.0,
+      "elapsed_s": 2318.7
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-30T11:34:52Z",
+      "elapsed_s": 19.5
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-30T11:35:36Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.6008,
+      "eta_min": 0.0,
+      "elapsed_s": 2568.4
+    }
+  },
+  "warnings": []
+}
