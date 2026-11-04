@@ -1,0 +1,30 @@
+{
+  "n_items": 21340,
+  "n_base_ids": 970,
+  "n_recordings": 695,
+  "n_content_free": 9,
+  "s_cf_mean": -5.665798611111111,
+  "top1_is_label_share": 1.0,
+  "confirmatory": true,
+  "head": "L2",
+  "probe": "P_enc_region_mean",
+  "bootstrap_B": 10000,
+  "seed": 42,
+  "backbone": "lora",
+  "run_name": "full-v1",
+  "code_sha": "474ca8b63e75a72f95e6963f8e838b1c8e3af069",
+  "fit_info": {
+    "L2": {
+      "C": 0.0001,
+      "cv_auroc": 0.9797871907552084
+    },
+    "P_enc_region_mean": {
+      "C": 0.001,
+      "cv_auroc": 0.959228515625
+    },
+    "P_enc_global_mean": {
+      "C": 0.001,
+      "cv_auroc": 0.9628448486328125
+    }
+  }
+}

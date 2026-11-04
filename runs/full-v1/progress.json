@@ -1,0 +1,16 @@
+{
+  "run_id": "full-v1",
+  "session_id": "20261020-210312-kaggle-e590",
+  "host": "kaggle",
+  "code_sha": "5ddc774248370c6932f4f6e6e6ae661db1858b77",
+  "updated_at": "2026-10-20T21:34:38Z",
+  "current_stage": null,
+  "stages": {
+    "joint": {
+      "status": "done",
+      "started_at": "2026-10-20T21:04:24Z",
+      "elapsed_s": 1801.5
+    }
+  },
+  "warnings": []
+}

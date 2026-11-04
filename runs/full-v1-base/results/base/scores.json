@@ -1,0 +1,63 @@
+{
+  "format": "erclm-scores-v1",
+  "info": {
+    "backbone": "base",
+    "bootstrap_B": 10000,
+    "code_sha": "011beff4c80a49f57e8c3973e4c0873cfa0e3903",
+    "confirmatory": true,
+    "fit_info": {
+      "L2": {
+        "C": 0.01,
+        "cv_auroc": 0.9103088378906249
+      },
+      "P_enc_global_mean": {
+        "C": 0.01,
+        "cv_auroc": 0.9211459689670138
+      },
+      "P_enc_region_mean": {
+        "C": 0.01,
+        "cv_auroc": 0.9305199517144098
+      }
+    },
+    "head": "L2",
+    "n_base_ids": 970,
+    "n_content_free": 9,
+    "n_items": 21340,
+    "n_recordings": 695,
+    "probe": "P_enc_region_mean",
+    "run_name": "full-v1",
+    "s_cf_mean": -3.2890625,
+    "seed": 42,
+    "top1_is_label_share": 1.0
+  },
+  "n_items": 21340,
+  "readouts": {
+    "L0": {
+      "rule": null
+    },
+    "L1_bc_cond": {
+      "rule": "bc_cond"
+    },
+    "L1_bc_global": {
+      "rule": "bc_global"
+    },
+    "L1_center_cond": {
+      "rule": "center_cond"
+    },
+    "L1_cf": {
+      "rule": null
+    },
+    "L1_median_cond": {
+      "rule": "median_cond"
+    },
+    "L2": {
+      "rule": null
+    },
+    "P_enc_global_mean": {
+      "rule": null
+    },
+    "P_enc_region_mean": {
+      "rule": null
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dev_bank_v2",
+  "variants": 3456,
+  "base_clips": 72,
+  "conditions": 48,
+  "rows": 3456,
+  "base_ids": 72,
+  "rec_ids": 72,
+  "speech_share": 0.5,
+  "axes": {
+    "factorial": 3456
+  },
+  "unknown_axis": 0,
+  "ids_hash": "3b6823b3ebb150fdf56e80f1b2ad5f550c6d5cfd4b784c2f1386ff505f71f866",
+  "audio_checked": 3456,
+  "failures": [],
+  "ok": true,
+  "sha256": "6546c98fd3ab63884ea6806480b9b4ad88756c677db10de9e9f0f32f9e18f024"
+}

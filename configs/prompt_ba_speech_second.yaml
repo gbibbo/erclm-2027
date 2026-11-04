@@ -1,0 +1,22 @@
+# Decision D1 of the closing plan (docs/exploratory_log.md). Prompt control with the variant ba_speech_second (erclm.lib_v3.PROMPTS),
+# which crosses the letter of the speech option with its position. Exploratory. The confirmatory prompt
+# is still "ab". 150 base clips per class, duration and SNR axes, both backbones.
+run_name: prompt-ba_speech_second
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+prompt_key: ba_speech_second
+llm_layers: [8, 16, 24]
+backbones: [base, lora]
+adapter: models/lora_retrained_v1   # retrained LoRA (configs/retrain.yaml)
+stages: [data_test, check_base, extract_base_eval, check_lora, extract_lora_eval]
+data:
+  test:
+    tar: data/test_bank_v2.tar
+    manifest: test_bank_v2/manifest.csv
+    audio: test_bank_v2/audio
+    expect: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+  train: null
+selection: {pilot: true, n_per_class: 150, seed: 42, axes: [duration, snr]}
+extraction: {shard_size: 250, n_content_free: 8}

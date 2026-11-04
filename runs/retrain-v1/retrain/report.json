@@ -1,0 +1,187 @@
+{
+  "final_dir": "/tmp/erclm_work/lora_train/final",
+  "best_from": "checkpoint-400",
+  "global_step": 576,
+  "max_steps": 576,
+  "evals": [
+    {
+      "step": 200,
+      "eval_loss": 0.18811209499835968
+    },
+    {
+      "step": 400,
+      "eval_loss": 0.14781996607780457
+    },
+    {
+      "step": 576,
+      "eval_loss": 0.16405116021633148
+    }
+  ],
+  "train_loss": [
+    {
+      "step": 380,
+      "loss": 0.47650322914123533
+    },
+    {
+      "step": 390,
+      "loss": 0.5638973236083984
+    },
+    {
+      "step": 400,
+      "loss": 0.36421566009521483
+    },
+    {
+      "step": 410,
+      "loss": 0.5888969898223877
+    },
+    {
+      "step": 420,
+      "loss": 0.4153291702270508
+    },
+    {
+      "step": 430,
+      "loss": 0.41047029495239257
+    },
+    {
+      "step": 440,
+      "loss": 0.563914680480957
+    },
+    {
+      "step": 450,
+      "loss": 0.4492332458496094
+    },
+    {
+      "step": 460,
+      "loss": 0.3134108304977417
+    },
+    {
+      "step": 470,
+      "loss": 0.67537841796875
+    },
+    {
+      "step": 480,
+      "loss": 0.45618352890014646
+    },
+    {
+      "step": 490,
+      "loss": 0.48367977142333984
+    },
+    {
+      "step": 500,
+      "loss": 0.4167062759399414
+    },
+    {
+      "step": 510,
+      "loss": 0.6309771537780762
+    },
+    {
+      "step": 520,
+      "loss": 0.4716797828674316
+    },
+    {
+      "step": 530,
+      "loss": 0.34419162273406984
+    },
+    {
+      "step": 540,
+      "loss": 0.3400589942932129
+    },
+    {
+      "step": 550,
+      "loss": 0.46783623695373533
+    },
+    {
+      "step": 560,
+      "loss": 0.3059390544891357
+    },
+    {
+      "step": 570,
+      "loss": 0.3732280969619751
+    }
+  ],
+  "recipe": {
+    "lora_r": 64,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "epochs": 3,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "lr": 5e-05,
+    "warmup_steps": 100,
+    "seed": 42,
+    "eval_steps": 200,
+    "checkpoint_every": 50,
+    "prompt_key": "ab"
+  },
+  "fp16": true,
+  "n_train": 3072,
+  "n_dev": 3456,
+  "resumed_from": null,
+  "lora_report": {
+    "n_lora_modules": 224,
+    "by_component": {
+      "audio_tower": 96,
+      "language_model": 128
+    },
+    "n_lora_B_zero": 0
+  },
+  "adapter": {
+    "files": {
+      "adapter_config.json": {
+        "size": 1135,
+        "md5": "788784544ee17a281288487a2d7fba50"
+      },
+      "adapter_model.safetensors": {
+        "size": 331416912,
+        "md5": "539ec4dc8cb85194077cee65cf2f8365"
+      }
+    },
+    "r": 64,
+    "lora_alpha": 16,
+    "target_modules": [
+      "k_proj",
+      "o_proj",
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "output": "models/lora_retrained_v1",
+  "model_info": {
+    "load_s": 137.7,
+    "vram_after_load": {
+      "allocated_gb": 5.824,
+      "max_allocated_gb": 5.936,
+      "reserved_gb": 6.08,
+      "per_device_allocated_gb": [
+        2.681,
+        3.142
+      ]
+    }
+  },
+  "vram_peak": {
+    "allocated_gb": 9.181,
+    "max_allocated_gb": 11.97,
+    "reserved_gb": 13.432,
+    "per_device_allocated_gb": [
+      4.362,
+      4.82
+    ]
+  },
+  "gpu": [
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    },
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    }
+  ],
+  "elapsed_s": 20467.9
+}

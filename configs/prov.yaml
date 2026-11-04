@@ -1,0 +1,34 @@
+# Decision D2 of the closing plan (docs/exploratory_log.md). Provenance bank v3 (erclm.bankgen_v3): speech and non-speech
+# from the same VoxConverse recordings, none of them used by the v2 banks, at the 8 durations without noise. Exploratory.
+# Two jobs. The first builds the bank on CPU (--stages build_prov). The second extracts both backbones.
+run_name: prov-v3
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+prompt_key: ab
+llm_layers: [8, 16, 24]
+backbones: [base, lora]
+adapter: models/lora_retrained_v1   # retrained LoRA (configs/retrain.yaml)
+stages: [data_test, check_base, extract_base_eval, check_lora, extract_lora_eval]
+provenance:
+  name: prov_bank_v3
+  seed: 42
+  per_recording: 1
+  min_recordings: 100
+  exclude_clips: data/manifests/clips_e1fb97b4c8015f22.csv   # clips of the v2 banks
+  sources:
+    voxconverse_audio:
+      dev: https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_dev_wav.zip
+      test: https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_test_wav.zip
+    voxconverse_rttm_commit: 24bf60be297701cd7e4ef18550c6d390c1b87365
+    esc50_commit: 33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6
+data:
+  test:
+    tar: data/prov_bank_v3.tar
+    manifest: prov_bank_v3/manifest.csv
+    audio: prov_bank_v3/audio
+    expect: {conditions: 8, speech_share: 0.5}
+  train: null
+selection: {pilot: false, seed: 42}
+extraction: {shard_size: 250, n_content_free: 8}

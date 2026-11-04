@@ -1,0 +1,51 @@
+{
+  "run_id": "full-v1-lora",
+  "session_id": "20261020-155855-kaggle-3ac5",
+  "host": "kaggle",
+  "code_sha": "474ca8b63e75a72f95e6963f8e838b1c8e3af069",
+  "updated_at": "2026-10-20T21:00:05Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-10-20T14:34:43Z"
+    },
+    "data_train": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-10-20T14:35:42Z"
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-20T16:00:21Z",
+      "elapsed_s": 152.8
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-20T16:03:24Z",
+      "total": 21349,
+      "done": 21349,
+      "done_at_start": 0,
+      "s_per_item": 0.6672,
+      "eta_min": 0.0,
+      "elapsed_s": 14361.0
+    },
+    "extract_lora_train": {
+      "status": "done",
+      "started_at": "2026-10-20T20:03:19Z",
+      "total": 3072,
+      "done": 3072,
+      "done_at_start": 0,
+      "s_per_item": 0.6586,
+      "eta_min": 0.0,
+      "elapsed_s": 2087.8
+    },
+    "analyze_lora": {
+      "status": "done",
+      "started_at": "2026-10-20T20:38:34Z",
+      "elapsed_s": 1278.0
+    }
+  },
+  "warnings": []
+}

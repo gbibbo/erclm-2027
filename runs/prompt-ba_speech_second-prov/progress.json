@@ -1,0 +1,31 @@
+{
+  "run_id": "prompt-ba_speech_second-prov",
+  "session_id": "20261026-031913-colab-aad2",
+  "host": "colab",
+  "code_sha": "2088771ffc3c13ad7536b2bc629f8aa675f1c45d",
+  "updated_at": "2026-10-26T03:47:07Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-26T03:19:55Z",
+      "elapsed_s": 22.8
+    },
+    "check_base": {
+      "status": "done",
+      "started_at": "2026-10-26T03:20:40Z",
+      "elapsed_s": 535.5
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "started_at": "2026-10-26T03:29:58Z",
+      "total": 1833,
+      "done": 1833,
+      "done_at_start": 0,
+      "s_per_item": 0.5365,
+      "eta_min": 0.0,
+      "elapsed_s": 1017.5
+    }
+  },
+  "warnings": []
+}

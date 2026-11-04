@@ -1,0 +1,41 @@
+{
+  "run_id": "gen-opro_llm_base",
+  "session_id": "20261103-025336-kaggle-0547",
+  "host": "kaggle",
+  "code_sha": "b57d5ab44eb73941e2d7029984f269c798f2fcbf",
+  "updated_at": "2026-11-03T03:02:25Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-11-02T16:35:20Z"
+    },
+    "check_base": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-11-02T16:39:40Z"
+    },
+    "extract_base_eval": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-11-02T18:51:13Z"
+    },
+    "check_lora": {
+      "status": "done",
+      "skipped": true,
+      "finished_at": "2026-11-02T18:58:22Z"
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-11-03T02:55:15Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 4000,
+      "s_per_item": 0.8642,
+      "eta_min": 0.0,
+      "elapsed_s": 420.2
+    }
+  },
+  "warnings": []
+}

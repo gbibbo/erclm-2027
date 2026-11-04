@@ -1,0 +1,180 @@
+{
+  "n_items": 300,
+  "ids_hash": "277f11f2990d00e316b0ab7721a996020a4e3206bc1f872d66109049d7e6f20c",
+  "timing": {
+    "ab": {
+      "n_scored": 300,
+      "s_per_item": 4.233
+    },
+    "ba_speech_second": {
+      "n_scored": 300,
+      "s_per_item": 4.265
+    },
+    "hand_csl": {
+      "n_scored": 300,
+      "s_per_item": 4.01
+    }
+  },
+  "verdict": {
+    "rule": {
+      "validity_prompt": "hand_csl",
+      "validity_condition": "dur_1000ms",
+      "validity_min_ba": 0.85,
+      "full_items": 27160,
+      "max_hours": 25,
+      "read_prompts": [
+        "ab",
+        "s_sim"
+      ],
+      "read_conditions": [
+        "dur_20ms",
+        "dur_40ms"
+      ],
+      "representation_auroc_hi": 0.65,
+      "criterion_auroc_lo": 0.6,
+      "criterion_gap": 0.1
+    },
+    "validity": {
+      "ba_L0": 0.97,
+      "min": 0.85,
+      "ok": true
+    },
+    "feasibility": {
+      "s_per_item": 4.169333333333333,
+      "full_items": 27160,
+      "projected_h": 31.5,
+      "max_h": 25,
+      "ok": false
+    },
+    "reading": {
+      "ab/dur_20ms": {
+        "reading": "inconclusive",
+        "auroc": 0.5962,
+        "auroc_ci": [
+          0.47518,
+          0.6998049999999999
+        ],
+        "ba_L0": 0.5,
+        "oracle_ba": 0.5900000000000001,
+        "ba_L1": 0.55
+      },
+      "ab/dur_40ms": {
+        "reading": "inconclusive",
+        "auroc": 0.6672,
+        "auroc_ci": [
+          0.550395,
+          0.76101
+        ],
+        "ba_L0": 0.5,
+        "oracle_ba": 0.6699999999999999,
+        "ba_L1": 0.63
+      },
+      "s_sim/dur_20ms": {
+        "reading": "inconclusive",
+        "auroc": 0.5778,
+        "auroc_ci": [
+          0.45557000000000003,
+          0.6790149999999999
+        ],
+        "ba_L0": 0.5,
+        "oracle_ba": 0.5700000000000001,
+        "ba_L1": 0.55
+      },
+      "s_sim/dur_40ms": {
+        "reading": "inconclusive",
+        "auroc": 0.672,
+        "auroc_ci": [
+          0.5551900000000001,
+          0.7672
+        ],
+        "ba_L0": 0.5,
+        "oracle_ba": 0.6599999999999999,
+        "ba_L1": 0.63
+      }
+    },
+    "full_run": false
+  },
+  "checks": {
+    "zA": 21.796875,
+    "zB": 26.0,
+    "s_primary": -4.203125,
+    "s_lse": -4.203125,
+    "top1": 33,
+    "top1_is_label": true,
+    "n_audio_in_ids": 26,
+    "head_check_maxdiff": 0.0,
+    "deterministic": true,
+    "top1_decoded": "B",
+    "h_final_dim": 2048,
+    "failures": [],
+    "load": {
+      "transformers": "4.57.6",
+      "torch": "2.11.0+cu128",
+      "alloc_conf": "expandable_segments:True",
+      "disk_before": {
+        "/tmp/erclm_work": {
+          "free_gb": 1122.7,
+          "total_gb": 8758.4
+        },
+        "/tmp": {
+          "free_gb": 1122.7,
+          "total_gb": 8758.4
+        },
+        "/root": {
+          "free_gb": 1122.7,
+          "total_gb": 8758.4
+        }
+      },
+      "shards": [
+        "model-00001-of-00015.safetensors",
+        "model-00002-of-00015.safetensors",
+        "model-00003-of-00015.safetensors",
+        "model-00004-of-00015.safetensors",
+        "model-00005-of-00015.safetensors",
+        "model-00006-of-00015.safetensors",
+        "model-00007-of-00015.safetensors",
+        "model-00008-of-00015.safetensors",
+        "model-00009-of-00015.safetensors",
+        "model-00010-of-00015.safetensors",
+        "model-00011-of-00015.safetensors",
+        "model-00012-of-00015.safetensors",
+        "model-00013-of-00015.safetensors"
+      ],
+      "load_s": 544.0,
+      "placement": [
+        "0",
+        "1"
+      ],
+      "compute_dtype": "torch.float16",
+      "disk_after": {
+        "/tmp/erclm_work": {
+          "free_gb": 1122.7,
+          "total_gb": 8758.4
+        },
+        "/tmp": {
+          "free_gb": 1122.7,
+          "total_gb": 8758.4
+        }
+      },
+      "vram_after_load": {
+        "allocated_gb": 16.159,
+        "max_allocated_gb": 16.184,
+        "reserved_gb": 16.203,
+        "per_device_allocated_gb": [
+          7.175,
+          8.985
+        ]
+      },
+      "gpu": [
+        {
+          "name": "Tesla T4",
+          "total_gb": 14.56
+        },
+        {
+          "name": "Tesla T4",
+          "total_gb": 14.56
+        }
+      ]
+    }
+  }
+}

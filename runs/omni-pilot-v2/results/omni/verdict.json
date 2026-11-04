@@ -1,0 +1,79 @@
+{
+  "rule": {
+    "validity_prompt": "hand_csl",
+    "validity_condition": "dur_1000ms",
+    "validity_min_ba": 0.85,
+    "full_items": 27160,
+    "max_hours": 25,
+    "read_prompts": [
+      "ab",
+      "s_sim"
+    ],
+    "read_conditions": [
+      "dur_20ms",
+      "dur_40ms"
+    ],
+    "representation_auroc_hi": 0.65,
+    "criterion_auroc_lo": 0.6,
+    "criterion_gap": 0.1
+  },
+  "validity": {
+    "ba_L0": 0.97,
+    "min": 0.85,
+    "ok": true
+  },
+  "feasibility": {
+    "s_per_item": 4.169333333333333,
+    "full_items": 27160,
+    "projected_h": 31.5,
+    "max_h": 25,
+    "ok": false
+  },
+  "reading": {
+    "ab/dur_20ms": {
+      "reading": "inconclusive",
+      "auroc": 0.5962,
+      "auroc_ci": [
+        0.47518,
+        0.6998049999999999
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.5900000000000001,
+      "ba_L1": 0.55
+    },
+    "ab/dur_40ms": {
+      "reading": "inconclusive",
+      "auroc": 0.6672,
+      "auroc_ci": [
+        0.550395,
+        0.76101
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.6699999999999999,
+      "ba_L1": 0.63
+    },
+    "s_sim/dur_20ms": {
+      "reading": "inconclusive",
+      "auroc": 0.5778,
+      "auroc_ci": [
+        0.45557000000000003,
+        0.6790149999999999
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.5700000000000001,
+      "ba_L1": 0.55
+    },
+    "s_sim/dur_40ms": {
+      "reading": "inconclusive",
+      "auroc": 0.672,
+      "auroc_ci": [
+        0.5551900000000001,
+        0.7672
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.6599999999999999,
+      "ba_L1": 0.63
+    }
+  },
+  "full_run": false
+}

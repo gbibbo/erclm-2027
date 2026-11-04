@@ -1,0 +1,9 @@
+# Smoke test of the remote and the base model, without audio banks. rclone uploads,
+# downloads and verifies a test file, the runner publishes env.json to the runs branch and the base
+# model passes its checks with a synthetic 2 s WAV (NF4, logits from the captured state, 50 audio tokens).
+run_name: smoke-v1
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # Hugging Face commit of 12 January 2025
+  quant: nf4
+stages: [smoke, check_base]

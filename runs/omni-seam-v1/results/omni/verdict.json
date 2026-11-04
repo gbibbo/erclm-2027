@@ -1,0 +1,79 @@
+{
+  "rule": {
+    "validity_prompt": "hand_csl",
+    "validity_condition": "dur_1000ms",
+    "validity_min_ba": 0.85,
+    "full_items": 27160,
+    "max_hours": 25,
+    "read_prompts": [
+      "ab_shift-500",
+      "ab_shift40"
+    ],
+    "read_conditions": [
+      "dur_20ms",
+      "dur_40ms"
+    ],
+    "representation_auroc_hi": 0.65,
+    "criterion_auroc_lo": 0.6,
+    "criterion_gap": 0.1
+  },
+  "validity": {
+    "ba_L0": NaN,
+    "min": 0.85,
+    "ok": false
+  },
+  "feasibility": {
+    "s_per_item": 3.9028333333333336,
+    "full_items": 27160,
+    "projected_h": 29.4,
+    "max_h": 25,
+    "ok": false
+  },
+  "reading": {
+    "ab_shift-500/dur_20ms": {
+      "reading": "inconclusive",
+      "auroc": 0.6358444444444444,
+      "auroc_ci": [
+        0.5717455555555556,
+        0.6992694444444445
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.6166666666666667,
+      "ba_L1": 0.58
+    },
+    "ab_shift-500/dur_40ms": {
+      "reading": "criterion",
+      "auroc": 0.7448888888888889,
+      "auroc_ci": [
+        0.6891694444444445,
+        0.7978394444444443
+      ],
+      "ba_L0": 0.53,
+      "oracle_ba": 0.7066666666666667,
+      "ba_L1": 0.6866666666666666
+    },
+    "ab_shift40/dur_20ms": {
+      "reading": "inconclusive",
+      "auroc": 0.6151777777777778,
+      "auroc_ci": [
+        0.5517011111111112,
+        0.6753116666666666
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.5966666666666666,
+      "ba_L1": 0.5466666666666666
+    },
+    "ab_shift40/dur_40ms": {
+      "reading": "criterion",
+      "auroc": 0.6922,
+      "auroc_ci": [
+        0.6315988888888889,
+        0.7493383333333332
+      ],
+      "ba_L0": 0.5,
+      "oracle_ba": 0.66,
+      "ba_L1": 0.6533333333333333
+    }
+  },
+  "full_run": false
+}

@@ -1,0 +1,114 @@
+{
+  "run_id": "smoke-v1",
+  "run_name": "smoke-v1",
+  "session_id": "20261016-183047-kaggle-a225",
+  "host": "kaggle",
+  "started_at": "2026-10-16T18:30:47Z",
+  "code_sha": "2f91b9e20bd4f399eaf8b4937dce25a9517b9e1c",
+  "code_ref": "stable",
+  "config_file": "configs/smoke.yaml",
+  "config_hash": "d0bb6633304ff02f",
+  "config": {
+    "run_name": "smoke-v1",
+    "repo": "gbibbo/erclm-2027",
+    "remote": "erclm:ERC-LM-2027",
+    "model": {
+      "id": "Qwen/Qwen2-Audio-7B-Instruct",
+      "revision": "0a095220c30b7b31434169c3086508ef3ea5bf0a",
+      "quant": "nf4"
+    },
+    "prompt_key": "ab",
+    "llm_layers": [
+      8,
+      16,
+      24
+    ],
+    "backbones": [
+      "base",
+      "lora"
+    ],
+    "adapter": "models/lora_csl_final",
+    "data": {
+      "test": null,
+      "train": null
+    },
+    "selection": {
+      "pilot": false,
+      "n_per_class": 50,
+      "seed": 42
+    },
+    "extraction": {
+      "shard_size": 250,
+      "n_content_free": 8,
+      "n_head_checks": 3,
+      "log_every": 100
+    },
+    "check": {
+      "head_tol": 0.01
+    },
+    "analysis": {
+      "bootstrap_B": 2000,
+      "seed": 42,
+      "h3_margin": 0.02,
+      "prevalence_reps": 20
+    },
+    "heartbeat": {
+      "log_every_s": 300,
+      "progress_every_s": 1200
+    },
+    "stages": [
+      "smoke",
+      "check_base"
+    ]
+  },
+  "model": {
+    "id": "Qwen/Qwen2-Audio-7B-Instruct",
+    "revision": "0a095220c30b7b31434169c3086508ef3ea5bf0a",
+    "quant": "nf4"
+  },
+  "backbones": [
+    "base",
+    "lora"
+  ],
+  "stages": [
+    "smoke",
+    "check_base"
+  ],
+  "force": [
+    "check_base"
+  ],
+  "remote": "rclone:erclm:ERC-LM-2027",
+  "work": "/tmp/erclm_work",
+  "gpu": {
+    "cuda": true,
+    "torch": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "devices": [
+      {
+        "name": "Tesla T4",
+        "total_gb": 14.56
+      },
+      {
+        "name": "Tesla T4",
+        "total_gb": 14.56
+      }
+    ]
+  },
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "sklearn": "1.6.1",
+    "transformers": "5.19.0",
+    "peft": "0.21.2",
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.2",
+    "soundfile": "0.14.0",
+    "librosa": "0.11.0",
+    "yaml": "6.0.3",
+    "rclone": "rclone v1.75.2"
+  }
+}

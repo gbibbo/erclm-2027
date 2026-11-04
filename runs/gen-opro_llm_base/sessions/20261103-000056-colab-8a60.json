@@ -1,0 +1,134 @@
+{
+  "run_id": "gen-opro_llm_base",
+  "run_name": "gen-opro_llm_base",
+  "session_id": "20261103-000056-colab-8a60",
+  "host": "colab",
+  "started_at": "2026-11-03T00:00:56Z",
+  "code_sha": "6d4b09b9ca63672aed0c9ee91502965c7cd58096",
+  "code_ref": "stable",
+  "config_file": "configs/gen_opro_llm_base.yaml",
+  "config_hash": "bcc0805312741466",
+  "config": {
+    "run_name": "gen-opro_llm_base",
+    "repo": "gbibbo/erclm-2027",
+    "remote": "erclm:ERC-LM-2027",
+    "model": {
+      "id": "Qwen/Qwen2-Audio-7B-Instruct",
+      "revision": "0a095220c30b7b31434169c3086508ef3ea5bf0a",
+      "quant": "nf4"
+    },
+    "prompt_key": "opro_llm_base",
+    "llm_layers": [
+      8,
+      16,
+      24
+    ],
+    "backbones": [
+      "base",
+      "lora"
+    ],
+    "adapter": "models/lora_retrained_v1",
+    "data": {
+      "test": {
+        "tar": "data/test_bank_v2.tar",
+        "manifest": "test_bank_v2/manifest.csv",
+        "audio": "test_bank_v2/audio",
+        "expect": {
+          "rows": 21340,
+          "conditions": 22,
+          "base_ids": 970,
+          "rec_ids": 695,
+          "speech_share": 0.5
+        }
+      },
+      "train": null
+    },
+    "selection": {
+      "pilot": true,
+      "n_per_class": 150,
+      "seed": 42,
+      "axes": [
+        "duration",
+        "snr"
+      ]
+    },
+    "extraction": {
+      "shard_size": 250,
+      "n_content_free": 8,
+      "n_head_checks": 3,
+      "log_every": 100
+    },
+    "check": {
+      "head_tol": 0.01
+    },
+    "analysis": {
+      "bootstrap_B": 2000,
+      "seed": 42,
+      "h3_margin": 0.02,
+      "prevalence_reps": 20
+    },
+    "heartbeat": {
+      "log_every_s": 300,
+      "progress_every_s": 1200
+    },
+    "stages": [
+      "data_test",
+      "check_base",
+      "extract_base_eval",
+      "check_lora",
+      "extract_lora_eval"
+    ],
+    "audio_transform": null,
+    "lora_keep": null,
+    "generate": {
+      "max_new_tokens": 16
+    }
+  },
+  "model": {
+    "id": "Qwen/Qwen2-Audio-7B-Instruct",
+    "revision": "0a095220c30b7b31434169c3086508ef3ea5bf0a",
+    "quant": "nf4"
+  },
+  "backbones": [
+    "base",
+    "lora"
+  ],
+  "stages": [
+    "data_test",
+    "check_base",
+    "extract_base_eval",
+    "check_lora",
+    "extract_lora_eval"
+  ],
+  "force": [],
+  "remote": "rclone:erclm:ERC-LM-2027",
+  "work": "/content/erclm_work",
+  "gpu": {
+    "cuda": true,
+    "torch": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "devices": [
+      {
+        "name": "Tesla T4",
+        "total_gb": 14.56
+      }
+    ]
+  },
+  "versions": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cu130",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "scipy": "1.16.3",
+    "sklearn": "1.6.1",
+    "transformers": "5.19.0",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "soundfile": "0.14.0",
+    "librosa": "0.11.0",
+    "yaml": "6.0.3",
+    "rclone": "rclone v1.75.2"
+  }
+}

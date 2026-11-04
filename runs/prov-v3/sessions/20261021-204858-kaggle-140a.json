@@ -1,0 +1,126 @@
+{
+  "run_id": "prov-v3",
+  "run_name": "prov-v3",
+  "session_id": "20261021-204858-kaggle-140a",
+  "host": "kaggle",
+  "started_at": "2026-10-21T20:48:58Z",
+  "code_sha": "61c0bffae64e284fd34a329c04d69e6d4e3cc107",
+  "code_ref": "stable",
+  "config_file": "configs/prov.yaml",
+  "config_hash": "da272613011c2d0d",
+  "config": {
+    "run_name": "prov-v3",
+    "repo": "gbibbo/erclm-2027",
+    "remote": "erclm:ERC-LM-2027",
+    "model": {
+      "id": "Qwen/Qwen2-Audio-7B-Instruct",
+      "revision": "0a095220c30b7b31434169c3086508ef3ea5bf0a",
+      "quant": "nf4"
+    },
+    "prompt_key": "ab",
+    "llm_layers": [
+      8,
+      16,
+      24
+    ],
+    "backbones": [
+      "base",
+      "lora"
+    ],
+    "adapter": "models/lora_retrained_v1",
+    "data": {
+      "test": {
+        "tar": "data/prov_bank_v3.tar",
+        "manifest": "prov_bank_v3/manifest.csv",
+        "audio": "prov_bank_v3/audio",
+        "expect": {
+          "conditions": 8,
+          "speech_share": 0.5
+        }
+      },
+      "train": null
+    },
+    "selection": {
+      "pilot": false,
+      "n_per_class": 50,
+      "seed": 42
+    },
+    "extraction": {
+      "shard_size": 250,
+      "n_content_free": 8,
+      "n_head_checks": 3,
+      "log_every": 100
+    },
+    "check": {
+      "head_tol": 0.01
+    },
+    "analysis": {
+      "bootstrap_B": 2000,
+      "seed": 42,
+      "h3_margin": 0.02,
+      "prevalence_reps": 20
+    },
+    "heartbeat": {
+      "log_every_s": 300,
+      "progress_every_s": 1200
+    },
+    "stages": [
+      "data_test",
+      "check_base",
+      "extract_base_eval",
+      "check_lora",
+      "extract_lora_eval"
+    ],
+    "provenance": {
+      "name": "prov_bank_v3",
+      "seed": 42,
+      "per_recording": 1,
+      "min_recordings": 100,
+      "exclude_clips": "data/manifests/clips_e1fb97b4c8015f22.csv",
+      "sources": {
+        "voxconverse_audio": {
+          "dev": "https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_dev_wav.zip",
+          "test": "https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_test_wav.zip"
+        },
+        "voxconverse_rttm_commit": "24bf60be297701cd7e4ef18550c6d390c1b87365",
+        "esc50_commit": "33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6"
+      }
+    }
+  },
+  "model": {
+    "id": "Qwen/Qwen2-Audio-7B-Instruct",
+    "revision": "0a095220c30b7b31434169c3086508ef3ea5bf0a",
+    "quant": "nf4"
+  },
+  "backbones": [
+    "base",
+    "lora"
+  ],
+  "stages": [
+    "build_prov"
+  ],
+  "force": [],
+  "remote": "rclone:erclm:ERC-LM-2027",
+  "work": "/tmp/erclm_work",
+  "gpu": {
+    "cuda": false,
+    "torch": "2.11.0+cpu"
+  },
+  "versions": {
+    "python": "3.13.15",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cpu",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "sklearn": "1.6.1",
+    "transformers": "5.19.0",
+    "peft": "0.21.2",
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.50.2",
+    "soundfile": "0.14.0",
+    "librosa": "0.11.0",
+    "yaml": "6.0.3",
+    "rclone": "rclone v1.75.2"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "n_items": 4209,
+  "ids_hash": "a6f9abbdbed3a9aacd8e370a783efd45c121e3c85ec3004243ff4dcfd83a8c00",
+  "resumed_with": 0,
+  "n_shards": 17,
+  "s_per_item": 0.5444,
+  "resume": {
+    "committed": 0,
+    "dropped": [],
+    "orphans_removed": 0
+  },
+  "gpu": [
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    }
+  ],
+  "vram": {
+    "allocated_gb": 5.844,
+    "max_allocated_gb": 5.944,
+    "reserved_gb": 6.143
+  }
+}

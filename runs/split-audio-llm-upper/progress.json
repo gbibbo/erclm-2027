@@ -1,0 +1,33 @@
+{
+  "run_id": "split-audio-llm-upper",
+  "session_id": "20261023-035628-kaggle-a21e",
+  "host": "kaggle",
+  "code_sha": "40a51adf42214fbb1dfe52c415206fb97051de03",
+  "updated_at": "2026-10-23T04:45:13Z",
+  "current_stage": null,
+  "stages": {
+    "data_test": {
+      "status": "done",
+      "started_at": "2026-10-23T03:57:27Z",
+      "elapsed_s": 79.0
+    },
+    "check_lora": {
+      "status": "done",
+      "started_at": "2026-10-23T03:59:14Z",
+      "elapsed_s": 146.5
+    },
+    "extract_lora_eval": {
+      "status": "done",
+      "started_at": "2026-10-23T04:02:07Z",
+      "total": 4209,
+      "done": 4209,
+      "done_at_start": 0,
+      "s_per_item": 0.6018,
+      "eta_min": 0.0,
+      "elapsed_s": 2573.8
+    }
+  },
+  "warnings": [
+    "check_base is not done, so base and LoRA outputs were not compared"
+  ]
+}

@@ -1,0 +1,21 @@
+# Banks v2 (docs/banks.md). Regenerates from the public VoxConverse and ESC-50 the test bank, i.e. the main bank
+# (970 base clips x 22 conditions), the LoRA training bank (64 x 48) and the validation bank
+# (72 x 48), and uploads them to Drive with their sha256 and their metadata. Runs on CPU.
+run_name: banks-v2
+model:
+  id: Qwen/Qwen2-Audio-7B-Instruct
+  revision: 0a095220c30b7b31434169c3086508ef3ea5bf0a   # unused in this stage, required by the configuration
+stages: [build_banks]
+banks:
+  seed: 42
+  names: {test: test_bank_v2, train: train_bank_v2, dev: dev_bank_v2}
+  sources:
+    voxconverse_audio:
+      dev: https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_dev_wav.zip
+      test: https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_test_wav.zip
+    voxconverse_rttm_commit: 24bf60be297701cd7e4ef18550c6d390c1b87365
+    esc50_commit: 33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6
+  expect:
+    test: {rows: 21340, conditions: 22, base_ids: 970, rec_ids: 695, speech_share: 0.5}
+    train: {rows: 3072, conditions: 48, base_ids: 64, rec_ids: 64, speech_share: 0.5}
+    dev: {rows: 3456, conditions: 48, base_ids: 72, rec_ids: 72, speech_share: 0.5}

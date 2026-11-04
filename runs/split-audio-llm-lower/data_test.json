@@ -1,0 +1,24 @@
+{
+  "rows": 21340,
+  "conditions": 22,
+  "base_ids": 970,
+  "rec_ids": 695,
+  "speech_share": 0.5,
+  "axes": {
+    "duration": 7760,
+    "snr": 5820,
+    "reverb": 3880,
+    "filter": 3880
+  },
+  "unknown_axis": 0,
+  "ids_hash": "f4c0f780827d02ad4dac7d2525ebcfccfcaa67d7df6c238587118d10cc774128",
+  "audio_checked": 21340,
+  "audio_bad": [],
+  "failures": [],
+  "ok": true,
+  "sha256": "a12a6b28e065b15956537aa2e2bf162a47262a8e18497f0bbab83496c0ae6ea1",
+  "neutral_identical": {
+    "base_ids_with_identical_neutral_conditions": 0,
+    "of": 970
+  }
+}

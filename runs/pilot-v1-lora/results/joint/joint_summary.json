@@ -1,0 +1,11 @@
+{
+  "n_items": 2200,
+  "n_recordings": 100,
+  "confirmatory": false,
+  "h3_noninferior_all_axes": true,
+  "h3_margin": 0.02,
+  "bootstrap_B": 2000,
+  "seed": 42,
+  "run_name": "pilot-v1",
+  "code_sha": "011beff4c80a49f57e8c3973e4c0873cfa0e3903"
+}

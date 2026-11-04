@@ -1,0 +1,101 @@
+{
+  "backbone": "lora",
+  "probe_seconds": 2.0,
+  "n_audio_tokens": 50,
+  "n_audio_in_ids": 50,
+  "head_check_maxdiff": 0.0,
+  "head_tol": 0.01,
+  "zA": 14.0546875,
+  "zB": 19.109375,
+  "s_primary": -5.0546875,
+  "s_lse": -5.054690361022949,
+  "deterministic": true,
+  "max_abs_dh_repeat": 0.0,
+  "top1": "B",
+  "top1_is_label": true,
+  "labels": {
+    "labels": [
+      "A",
+      "B"
+    ],
+    "pos_ids": [
+      32,
+      362
+    ],
+    "neg_ids": [
+      33,
+      425
+    ],
+    "pos_primary": 32,
+    "neg_primary": 33,
+    "single_token": [
+      true,
+      true
+    ],
+    "decoded": [
+      "A",
+      " A",
+      "B",
+      " B"
+    ]
+  },
+  "feature_dims": {
+    "h_final": 4096,
+    "enc_global_mean": 1280,
+    "enc_region_mean": 1280,
+    "enc_region_max": 1280,
+    "proj_region_mean": 4096,
+    "h_layer8": 4096,
+    "h_layer16": 4096,
+    "h_layer24": 4096
+  },
+  "recorder": {
+    "final_norm": "base_model.model.model.language_model.norm",
+    "audio_tower": "base_model.model.model.audio_tower",
+    "projector": "base_model.model.model.multi_modal_projector",
+    "lm_head": "base_model.model.lm_head",
+    "layer8": "base_model.model.model.language_model.layers.8",
+    "layer16": "base_model.model.model.language_model.layers.16",
+    "layer24": "base_model.model.model.language_model.layers.24"
+  },
+  "n_llm_layers": 32,
+  "model_info": {
+    "load_s": 513.2,
+    "vram_after_load": {
+      "allocated_gb": 5.823,
+      "max_allocated_gb": 5.878,
+      "reserved_gb": 5.994
+    }
+  },
+  "vram": {
+    "allocated_gb": 6.154,
+    "max_allocated_gb": 6.441,
+    "reserved_gb": 6.752
+  },
+  "gpu": [
+    {
+      "name": "Tesla T4",
+      "total_gb": 14.56
+    }
+  ],
+  "lora_report": {
+    "n_lora_modules": 224,
+    "by_component": {
+      "audio_tower": 96,
+      "language_model": 128
+    },
+    "n_lora_B_zero": 0,
+    "remapped": null,
+    "restricted": {
+      "keep": "audio_tower+language_model:0-15",
+      "kept": {
+        "audio_tower": 96,
+        "language_model": 64
+      },
+      "disabled": {
+        "language_model": 64
+      }
+    }
+  },
+  "failures": []
+}
